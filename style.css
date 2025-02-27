@@ -149,7 +149,6 @@ body {
       max-height: 75vh;
       overflow: auto;
       padding: 40px 20px;
-      padding-bottom: 0;
       display: grid;
       grid-template-columns: 3fr 1fr;
       grid-template-rows: auto 1fr;
@@ -176,7 +175,7 @@ body {
               margin-bottom: 6px;
             }
             p{
-              color: rgb(114, 112, 112);
+              color: grey;
             }
           }
 
