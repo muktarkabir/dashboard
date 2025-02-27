@@ -18,8 +18,8 @@
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   font-family: "Roboto", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -32,7 +32,7 @@ body {
 }
 
 .content::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 }
 
 .content::-webkit-scrollbar-thumb {
@@ -61,25 +61,20 @@ hr {
   flex-direction: column;
   padding: 10px 0px 0 20px;
 
-  /* h2,
-  h3 {
-    justify-self: start;
-  } */
   svg {
     fill: #fff;
     width: 30px;
   }
 
   .logo {
-    svg {
-      width: 50px;
-      gap: 20px;
-    }
-
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     margin-bottom: 40px;
+    svg {
+      width: 50px;
+      gap: 20px;
+    }
   }
 
   .navs {
@@ -110,8 +105,6 @@ hr {
     display: grid;
     grid-template-rows: auto 1fr;
     row-gap: 20px;
-    position: relative;
-
     & div:first-of-type {
       /* TOP PART */
       display: grid;
@@ -148,7 +141,6 @@ hr {
     /* BOTTOM PART */
 
     & div:last-of-type {
-      position: sticky;
       display: grid;
       grid-template-columns: 100px 1fr auto;
       align-items: center;
@@ -192,6 +184,7 @@ hr {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: auto 1fr;
     gap: 10px;
+    column-gap: 20px;
 
     & .projects {
       display: grid;
@@ -212,9 +205,6 @@ hr {
         & .project-write-up {
           h3 {
             margin-bottom: 6px;
-          }
-          p {
-            color: grey;
           }
         }
 
