@@ -10,7 +10,7 @@
 
 :root {
   --main-bg-color: #e2e8f0;
-  --sidebar-bg-color: #1992d4;
+  --blue: #1992d4;
   --dark-main-bg-color: #101828;
   --card-side-border-color: #f0b429;
   --profile-picture: url("assets/gear-5-chalk.jpeg");
@@ -19,6 +19,7 @@
 body {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   font-family: "Roboto", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background-color: var(--main-bg-color);
@@ -33,7 +34,7 @@ body {
 }
 
 .container .sidebar {
-  background-color: var(--sidebar-bg-color);
+  background-color: var(--blue);
   color: #fff;
   display: grid;
   grid-template-columns: 50px 1fr;
@@ -60,7 +61,8 @@ body {
 .container .main{
     display: grid;
     grid-template-rows: 25% 75%;
-
+     
+    /* HEADER */
     .header{
         box-shadow: 0px 1px 4px grey;
         background-color: #fff;
@@ -68,6 +70,7 @@ body {
         display: grid;
         grid-template-rows: auto 1fr;
         row-gap: 20px;
+        position: relative;
 
         & div:first-of-type{
           /* TOP PART */
@@ -106,6 +109,7 @@ body {
         /* BOTTOM PART */
 
         & div:last-of-type{
+          position: sticky;
           display: grid;
           grid-template-columns: 100px 1fr auto;
           align-items: center;
@@ -127,14 +131,43 @@ body {
 
           & .buttons button{
             all: unset;
-            background-color: var(--sidebar-bg-color);
+            background-color: var(--blue);
             color: #fff;
             font-weight: bold;
             height: 40px;
             border-radius: 50px;
             text-align: center;
             width: 100px;
+            cursor: pointer;
           }
         }
+    }
+
+    /* MAIN */
+
+    .content{
+      max-height: 75vh;
+      overflow: auto;
+      padding: 40px 20px;
+      padding-bottom: 0;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 10px;
+
+      & .projects{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+        row-gap: 20px;
+        column-gap: 12px;
+
+        & .project{
+          height: 250px;
+          border-left: 8px solid var(--card-side-border-color);
+          border-radius: 6px;
+          background-color: #fff;
+          box-shadow: 1px 1px 6px rgb(170, 168, 168);
+        }
+      }
     }
 }
