@@ -26,23 +26,22 @@ body {
   background-color: var(--main-bg-color);
 }
 
-
-
 /* CSS TO HIDE SCROLLBAR, I DONT LIKE SEEING THE SCROLLBAR THERE */
 .content::-webkit-scrollbar {
   width: 1px;
 }
- 
+
 .content::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
 }
- 
+
 .content::-webkit-scrollbar-thumb {
   background-color: transparent;
   outline: none;
 }
 
-p,hr{
+p,
+hr {
   margin-bottom: 20px;
   color: gray;
 }
@@ -52,37 +51,56 @@ p,hr{
   width: 100%;
   background-color: var(--main-bg-color);
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 1fr 5fr;
 }
 
 .container .sidebar {
   background-color: var(--blue);
   color: #fff;
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  grid-auto-rows: 50px;
-  align-items: center;
-  justify-items: start;
-  column-gap: 10px;
-  place-items: center;
-  padding: 10px 0px 0 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px 0 20px;
 
-  h2,
+  /* h2,
   h3 {
     justify-self: start;
-  }
+  } */
   svg {
     fill: #fff;
+    width: 30px;
+  }
 
-    &:not(:nth-of-type(1)) {
-      width: 20px;
+  .logo {
+    svg {
+      width: 50px;
+      gap: 20px;
     }
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .navs {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
   }
 }
 
 .container .main {
   display: grid;
-  grid-template-rows: 25% 75%;
+  grid-template-rows: 2fr 8fr;
 
   /* HEADER */
   .header {
@@ -250,14 +268,14 @@ p,hr{
           max-width: 100%;
           border-radius: 50%;
         }
-        
-        .text p{
+
+        .text p {
           font-size: 0.8rem;
           margin-bottom: 0;
         }
 
         /* CENtRALIZE TEXT */
-        & :nth-child(even){
+        & :nth-child(even) {
           align-self: center;
         }
       }
